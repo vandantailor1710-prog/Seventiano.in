@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="sv-h" content="6247007428217785">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEVENTIANO — Jewellery Beyond Ordinary</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <!--
+
+TemplateMo 611 SEVENTIANO
+
+https://templatemo.com/tm-611-SEVENTIANO
+-->
+    <style>
+        :root{--g:#ffffff;--gd:#ffffff;--y:#0e6b34;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
+        *{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth}
+        body{background:var(--g);color:var(--y);font-family:var(--sans);line-height:1.7;font-size:16px}
+        body *:not(img){color:var(--y)}
+        a{text-decoration:none}
+        ul{list-style:none}
+        img{display:block;width:100%;height:100%;object-fit:cover}
+        .container{max-width:1200px;margin:0 auto;padding:0 24px}
+        section{padding:90px 0}
+        .heading-display{font-family:var(--serif);font-weight:500;line-height:1.15}
+        .text-label{font-size:12px;letter-spacing:.25em;text-transform:uppercase;margin-bottom:16px}
+        .text-body{opacity:.95}
+        .btn-primary,.nav-cta,.form-submit{display:inline-block;padding:14px 28px;background:var(--gd);border:1px solid var(--y);font-size:13px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:.3s;font-family:var(--sans)}
+        .btn-primary:hover,.nav-cta:hover,.form-submit:hover{background:var(--y);}
+        .btn-primary:hover,.nav-cta:hover,.form-submit:hover{color:var(--gd)!important}
+        .btn-text{border-bottom:1px solid var(--y);padding-bottom:3px;font-size:14px;letter-spacing:.08em}
+        /* header */
+        .site-header{position:sticky;top:0;z-index:50;background:var(--g);border-bottom:1px solid rgba(14,107,52,.35)}
+        .header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+        .logo,.footer-logo{font-family:var(--serif);font-size:28px;letter-spacing:.18em;font-weight:600}
+        .nav-main{display:flex;align-items:center;gap:32px;font-size:14px;letter-spacing:.06em}
+        .nav-main a:not(.nav-cta):hover{border-bottom:1px solid var(--y)}
+        .nav-cta{padding:10px 20px}
+        .menu-toggle{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px}
+        .menu-toggle span{display:block;width:26px;height:2px;background:var(--y)}
+        .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:90}
+        .mobile-overlay.active{display:block}
+        .mobile-nav{position:fixed;top:0;right:-320px;width:300px;height:100%;background:var(--gd);z-index:100;padding:30px;transition:.35s;border-left:1px solid var(--y)}
+        .mobile-nav.active{right:0}
+        .mobile-nav-close{background:none;border:0;font-size:36px;cursor:pointer;float:right}
+        .mobile-nav-links{clear:both;margin:40px 0;display:grid;gap:20px;font-family:var(--serif);font-size:26px}
+        /* hero */
+        .hero{display:grid;grid-template-columns:1fr 1fr;min-height:85vh;padding:0}
+        .hero-content{padding:80px 6vw;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+        .hero-title{font-size:clamp(44px,6vw,84px);margin-bottom:24px}
+        .hero-title em{font-style:italic}
+        .hero-description{max-width:480px;margin-bottom:36px;font-size:18px}
+        .hero-actions{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+        .hero-image{position:relative;min-height:420px;background:linear-gradient(135deg,#f3f9f5,#d5e9dc)}
+        .hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1s;background:linear-gradient(135deg,#f3f9f5,#d5e9dc)}
+        .hero-slide.active{opacity:1}
+        .hero-image-overlay{position:absolute;left:24px;bottom:24px;padding:16px 22px;background:var(--gd);border:1px solid var(--y)}
+        .overlay-title{font-family:var(--serif);font-size:22px}
+        /* featured */
+        .featured-piece{background:var(--gd)}
+        .featured-grid,.story-grid,.craft-grid,.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+        .featured-image-wrapper{position:relative}
+        .featured-image,.craft-image,.story-image,.collection-image{background:linear-gradient(135deg,#f3f9f5,#d5e9dc);overflow:hidden;border:1px solid rgba(14,107,52,.4)}
+        .featured-image{aspect-ratio:4/5}
+        .featured-badge{position:absolute;top:20px;left:20px;padding:6px 16px;font-size:12px;letter-spacing:.15em;text-transform:uppercase;background:var(--gd);border:1px solid var(--y)}
+        .featured-title,.story-title,.craft-title,.contact-title,.testimonials-title,.section-title{font-size:clamp(34px,4vw,52px);margin-bottom:22px}
+        .featured-description,.story-text,.craft-text,.contact-text{margin-bottom:22px}
+        .detail-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(14,107,52,.3)}
+        .featured-details{margin:26px 0}
+        .featured-price{font-family:var(--serif);font-size:38px;margin-bottom:24px}
+        /* collections */
+        .section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:50px;gap:20px;flex-wrap:wrap}
+        .collections-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+        .collection-item{position:relative;aspect-ratio:4/5;overflow:hidden}
+        .collection-item:first-child{grid-column:span 2;aspect-ratio:auto;min-height:340px}
+        .collection-image{position:absolute;inset:0}
+        .collection-overlay{position:absolute;left:0;right:0;bottom:0;padding:24px;background:linear-gradient(transparent,rgba(255,255,255,.95))}
+        .collection-name{font-family:var(--serif);font-size:28px;font-weight:500}
+        /* story */
+        .story-images{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+        .story-image{aspect-ratio:3/4}
+        .story-image:nth-child(2){margin-top:50px}
+        .story-signature{margin-top:30px;border-top:1px solid rgba(14,107,52,.4);padding-top:18px}
+        .signature-name{font-family:var(--serif);font-size:26px;font-style:italic}
+        /* craft */
+        .craftsmanship{background:var(--gd)}
+        .craft-list{margin:20px 0 30px;display:grid;gap:10px}
+        .craft-list li:before{content:"◆  ";font-size:10px}
+        .craft-image{aspect-ratio:4/3;margin-bottom:24px}
+        .craft-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:center}
+        .stat-item{padding:18px 8px;background:var(--g);border:1px solid var(--y)}
+        .stat-number{font-family:var(--serif);font-size:40px;line-height:1.1}
+        .stat-label{font-size:12px;letter-spacing:.08em}
+        /* testimonials */
+        .testimonials-header{text-align:center;margin-bottom:50px}
+        .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+        .testimonial-card{padding:32px;background:var(--gd);border:1px solid var(--y)}
+        .testimonial-stars{margin-bottom:14px;letter-spacing:4px}
+        .testimonial-text{font-family:var(--serif);font-size:20px;margin-bottom:24px;line-height:1.5}
+        .testimonial-author{display:flex;align-items:center;gap:14px}
+        .testimonial-avatar{width:48px;height:48px;border-radius:50%;overflow:hidden;background:var(--g);border:1px solid var(--y);flex-shrink:0}
+        .testimonial-name{font-weight:600}
+        .testimonial-detail{font-size:13px;opacity:.85}
+        /* contact */
+        .contact-details{display:grid;gap:22px;margin-top:30px}
+        .contact-item-label{font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:4px}
+        .contact-form-wrapper{padding:40px;background:var(--gd);border:1px solid var(--y)}
+        .form-title{font-family:var(--serif);font-size:30px;margin-bottom:24px;font-weight:500}
+        .form-group{margin-bottom:18px}
+        .form-label{display:block;font-size:13px;letter-spacing:.06em;margin-bottom:6px}
+        .form-input,.form-textarea{width:100%;padding:12px 14px;background:var(--g);border:1px solid var(--y);color:var(--y)!important;font-family:var(--sans);font-size:15px}
+        .form-textarea{min-height:110px;resize:vertical}
+        .form-input::placeholder,.form-textarea::placeholder{color:var(--y)!important;opacity:.65}
+        .form-input:focus,.form-textarea:focus{outline:2px solid var(--y)}
+        .form-submit{width:100%}
+        /* footer */
+        .site-footer{background:var(--gd);padding:70px 0 30px;border-top:1px solid var(--y)}
+        .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.4fr;gap:40px}
+        .footer-logo{margin-bottom:14px}
+        .footer-tagline,.footer-about p,.footer-contact-info p{font-size:14px;margin-bottom:8px}
+        .footer-column-title{font-family:var(--serif);font-size:22px;margin-bottom:16px;font-weight:500}
+        .footer-links{display:grid;gap:8px;font-size:14px}
+        .footer-links a:hover,.footer-about a{text-decoration:underline}
+        .footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-top:50px;padding-top:24px;border-top:1px solid rgba(14,107,52,.35);font-size:13px}
+        .footer-social{display:flex;gap:20px}
+        /* responsive */
+        @media(max-width:900px){
+            section{padding:60px 0}
+            .nav-main{display:none}
+            .menu-toggle{display:flex}
+            .hero,.featured-grid,.story-grid,.craft-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+            .hero{min-height:auto}
+            .hero-image{min-height:340px}
+            .collections-grid,.testimonials-grid{grid-template-columns:1fr}
+            .collection-item:first-child{grid-column:auto}
+            .footer-grid{grid-template-columns:1fr 1fr}
+        }
+        @media(max-width:560px){.footer-grid{grid-template-columns:1fr}.contact-form-wrapper{padding:24px}}
+
+        /* owner edit mode (hidden from visitors) */
+        .sv-vid{display:block;width:100%;height:100%;object-fit:cover}
+        #svBar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:9999;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;max-width:96vw;padding:10px 14px;background:#0e6b34;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,.35);font:13px Arial,sans-serif}
+        #svBar,#svBar *{color:#fff}
+        #svBar button{background:#fff;border:0;border-radius:6px;padding:6px 12px;cursor:pointer;font:13px Arial,sans-serif;color:#0e6b34!important}
+        body.editing [contenteditable=true]{cursor:text;outline:1px dashed rgba(14,107,52,.45);outline-offset:2px}
+        body.editing [contenteditable=true]:focus{outline:2px solid #0e6b34}
+        body.editing .img-slot{outline:2px dashed #0e6b34;outline-offset:-4px;cursor:pointer}
+        body.editing .img-slot::after{content:"📷 Click to change photo / video";position:absolute;top:8px;right:8px;z-index:5;background:#0e6b34;color:#fff;padding:4px 10px;font-size:12px;font-family:Arial,sans-serif;pointer-events:none}
+        body.editing .featured-image,body.editing .story-image,body.editing .craft-image,body.editing .testimonial-avatar,body.editing .hero-image{position:relative}
+        body.editing .testimonial-avatar.img-slot::after{content:"📷";inset:0;top:0;right:0;display:flex;align-items:center;justify-content:center;padding:0;background:rgba(255,255,255,.7)}
+        body.editing .hero-image-overlay{cursor:pointer;z-index:6}
+        body.editing .hero-slide{pointer-events:none}
+
+/* ===== v2 structure ===== */
+.nav-main{gap:22px;font-size:13px}.nav-tools{display:flex;gap:18px;font-size:13px;letter-spacing:.08em}
+.sec-head{text-align:center;margin-bottom:44px}.sec-head h2{font-size:clamp(30px,4vw,48px)}
+.cat-title{font-family:var(--serif);font-size:26px;letter-spacing:.14em;margin:38px 0 6px;border-bottom:1px solid rgba(14,107,52,.35);padding-bottom:8px}
+.subs{display:flex;flex-wrap:wrap;gap:10px 26px;margin:10px 0 16px;font-size:14px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px}
+.pcard{position:relative}.pimg{position:relative;aspect-ratio:1/1;overflow:hidden;background:linear-gradient(135deg,#f3f9f5,#d5e9dc)}
+.pimg img{position:absolute;inset:0}.pcard .pmeta{padding:10px 0;font-size:14px}.pmeta b{font-family:var(--serif);font-size:20px;font-weight:500;display:block}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.opt{margin:16px 0}.opt .lab{font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px}
+.chips{display:flex;gap:10px;flex-wrap:wrap}.chip{border:1px solid var(--y);padding:8px 16px;font-size:13px;cursor:pointer;background:#fff;font-family:var(--sans)}
+.chip.on{background:var(--y);color:#fff!important}
+.fld{width:100%;padding:12px;border:1px solid var(--y);background:#fff;font-family:var(--sans);font-size:15px;margin-bottom:12px;color:var(--y)}
+.idx{max-width:760px;margin:0 auto}.idx li{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(14,107,52,.3);font-family:var(--serif);font-size:22px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}.steps .n{font-family:var(--serif);font-size:44px}
+.flow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;font-size:13px;letter-spacing:.06em}.flow span{border:1px solid var(--y);padding:8px 14px}
+.note{font-size:14px;opacity:.9;margin-top:10px}
+.track{display:flex;flex-wrap:wrap;gap:0;margin-top:22px}.track div{flex:1;min-width:130px;padding:12px 8px;border:1px solid var(--y);text-align:center;font-size:12px;letter-spacing:.08em}
+.track .done{background:var(--y);color:#fff!important}
+.acct{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.acct a{border:1px solid var(--y);padding:18px;text-align:center;letter-spacing:.08em;font-size:14px}
+.fcols{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:14px;margin:14px 0}
+.gwrap{min-width:0}.gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:0;scrollbar-width:none}.gal::-webkit-scrollbar{display:none}.gslide{flex:0 0 100%;scroll-snap-align:start}.gnav{display:flex;justify-content:center;align-items:center;gap:22px;margin-top:10px;font-size:14px}.gnav button{border:1px solid var(--y);background:#fff;width:40px;height:40px;cursor:pointer;font-size:18px;color:var(--y)}
+@media(max-width:900px){.two{grid-template-columns:1fr;gap:30px}.steps{grid-template-columns:1fr 1fr}.acct{grid-template-columns:1fr}.nav-tools{display:none}}
+    </style>
+</head>
+<body>
+<header class="site-header" id="header"><div class="container"><div class="header-inner">
+<a href="#" class="logo">SEVENTIANO</a>
+<nav class="nav-main"><a href="#collections">Collections</a><a href="#bespoke">Bespoke</a><a href="#design-index">Design Index</a><a href="#how">How It Works</a><a href="#about">About</a><a href="#private">Private Client</a></nav>
+<div class="nav-tools"><a href="#search" onclick="var q=prompt('Search Design ID or name (e.g. SV-0000):');if(q)location.hash='#design-index';return false">SEARCH 🔍</a><a href="#account">ACCOUNT</a><a href="#product">BAG</a></div>
+<button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></div></header>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<nav class="mobile-nav" id="mobileNav"><button class="mobile-nav-close" id="mobileNavClose">×</button>
+<ul class="mobile-nav-links"><li><a href="#collections">Collections</a></li><li><a href="#bespoke">Bespoke</a></li><li><a href="#design-index">Design Index</a></li><li><a href="#how">How It Works</a></li><li><a href="#about">About</a></li><li><a href="#private">Private Client</a></li></ul>
+<div class="mobile-nav-cta"><a href="#account" class="btn-primary">Account</a></div></nav>
+
+<section class="hero"><div class="hero-content">
+<p class="text-label hero-tagline">Limited creations. Crafted on order.</p>
+<h1 class="heading-display hero-title">SEVENTIANO<br><em>Jewellery Beyond Ordinary.</em></h1>
+<p class="text-body hero-description">Limited creations. Crafted on order. Designed to be remembered.</p>
+<div class="hero-actions"><a href="#collections" class="btn-primary">Explore Collection</a><a href="#bespoke" class="btn-primary">Create Your Piece</a></div></div>
+<div class="hero-image">
+<div class="hero-slide active" data-title="Design Name" data-price="₹XX,XXX onwards"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""></div>
+<div class="hero-slide" data-title="Design Name" data-price="₹XX,XXX onwards"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""></div>
+<div class="hero-slide" data-title="Design Name" data-price="₹XX,XXX onwards"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""></div>
+<div class="hero-image-overlay"><p class="overlay-title" id="heroTitle">Design Name</p><p class="overlay-price" id="heroPrice">₹XX,XXX onwards</p></div>
+</div></section>
+
+<section id="collections"><div class="container"><div class="sec-head"><p class="text-label">Collections</p><h2 class="heading-display">Every piece, made to order</h2></div><h3 class="cat-title">RINGS</h3><div class="subs"><span>Imperial Rings</span><span>Statement Rings</span><span>Signature Rings</span><span>Men's Rings</span></div><div class="pgrid"><div class="pcard"><div class="pimg"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""></div><div class="pmeta"><b>Design Name</b><span>SV-0000 · 18K Gold | Diamond</span><br><span>₹XX,XXX onwards</span><br><a href="#product" class="btn-text">Order / Enquire</a></div></div><div class="pcard"><div class="pimg"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""></div><div class="pmeta"><b>Design Name</b><span>SV-0000 · 18K Gold | Diamond</span><br><span>₹XX,XXX onwards</span><br><a href="#product" class="btn-text">Order / Enquire</a></div></div></div><h3 class="cat-title">BRACELETS</h3><div class="subs"><span>Tennis Bracelet</span><span>Signature Bracelet</span><span>Men's Bracelet</span></div><div class="pgrid"><div class="pcard"><div class="pimg"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""></div><div class="pmeta"><b>Design Name</b><span>SV-0000 · 18K Gold | Diamond</span><br><span>₹XX,XXX onwards</span><br><a href="#product" class="btn-text">Order / Enquire</a></div></div></div><h3 class="cat-title">NECKLACES</h3><div class="subs"><span>Pendants</span><span>Statement Necklaces</span><span>Custom Pieces</span></div><div class="pgrid"><div class="pcard"><div class="pimg"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""></div><div class="pmeta"><b>Design Name</b><span>SV-0000 · 18K Gold | Diamond</span><br><span>₹XX,XXX onwards</span><br><a href="#product" class="btn-text">Order / Enquire</a></div></div></div><h3 class="cat-title">EARRINGS</h3><div class="subs"><span>Studs</span><span>Drop Earrings</span><span>Statement Earrings</span></div><h3 class="cat-title">BESPOKE</h3><p class="text-body">Completely custom designs. <a href="#bespoke" class="btn-text">Start your bespoke piece</a></p>
+<p class="note">Each product: Design ID · Render images · Metal · Stone · Starting price.</p></div></section>
+
+<section id="product"><div class="container two">
+<div class="gwrap"><div class="gal" id="gal"><div class="pcard pimg gslide"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""></div><div class="pcard pimg gslide"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""></div><div class="pcard pimg gslide"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""></div><div class="pcard pimg gslide"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""></div><div class="pcard pimg gslide"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""></div></div><div class="gnav"><button type="button" id="gPrev">&larr;</button><span id="gCount">1 / 5</span><button type="button" id="gNext">&rarr;</button></div></div>
+<div><p class="text-label">SV-0000</p><h2 class="heading-display" style="font-size:40px">Design Name</h2>
+<p class="text-body">18K Gold | Diamond</p><p style="font-size:24px;font-family:var(--serif)">₹XX,XXX onwards</p>
+<p class="note">Each piece is individually crafted after confirmation of your order.</p>
+<div class="opt"><div class="lab">Metal</div><div class="chips"><span class="chip">14K Gold</span><span class="chip on">18K Gold</span><span class="chip">925 Silver</span></div></div>
+<div class="opt"><div class="lab">Stone</div><div class="chips"><span class="chip on">Natural Diamond</span><span class="chip">Lab-Grown Diamond</span><span class="chip">CZ</span></div></div>
+<div class="opt"><div class="lab">Ring Size</div><select class="fld" style="max-width:220px"><option>Select size</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option></select></div>
+<a href="#order" class="btn-primary">Request to Order</a>
+<p class="note">Estimated Crafting Time: 10–20 working days<br>Made to Order: Yes<br>Limited Edition: Yes<br>Final price may vary according to metal weight, stone selection and size.</p>
+<p class="note">Estimated price: ₹XX,XXX onwards. Final price: confirmed after specifications, as gold weight, size, stone quantity and quality change the actual cost.</p>
+</div></div></section>
+
+<section id="order"><div class="container" style="max-width:720px"><div class="sec-head"><p class="text-label">Order / Enquire</p><h2 class="heading-display">Request to Order</h2></div>
+<form class="sv-form"><input class="fld" placeholder="Design ID (e.g. SV-0000)"><input class="fld" placeholder="Ring size"><input class="fld" placeholder="Metal"><input class="fld" placeholder="Stone"><input class="fld" placeholder="Your name"><input class="fld" placeholder="Phone / WhatsApp"><input class="fld" type="email" placeholder="Email"><button class="form-submit" type="submit">Request to Order</button></form>
+<p class="note">After your request: final quotation, then 50% advance to begin production and 50% before dispatch. Custom/bespoke orders may have separate terms.</p></div></section>
+
+<section id="design-index"><div class="container"><div class="sec-head"><p class="text-label">Design Index</p><h2 class="heading-display">Enquire directly with a Design ID</h2></div>
+<ul class="idx"><li><span>SV-0000</span><span>Design Name</span></li><li><span>SV-0000</span><span>Design Name</span></li><li><span>SV-0000</span><span>Design Name</span></li><li><span>SV-0000</span><span>Design Name</span></li></ul></div></section>
+
+<section id="bespoke"><div class="container" style="max-width:720px"><div class="sec-head"><p class="text-label">Bespoke</p><h2 class="heading-display">YOUR IDEA. OUR CREATION.</h2></div>
+<form class="sv-form"><label class="text-label">Upload your idea / photo</label><input class="fld" type="file" accept="image/*">
+<select class="fld"><option>Jewellery type</option><option>Ring</option><option>Bracelet</option><option>Necklace / Pendant</option><option>Earrings</option></select>
+<select class="fld"><option>Budget range</option><option>Under ₹50,000</option><option>₹50,000 – ₹1,00,000</option><option>₹1,00,000 – ₹3,00,000</option><option>₹3,00,000+</option></select>
+<select class="fld"><option>Metal</option><option>14K Gold</option><option>18K Gold</option><option>925 Silver</option></select>
+<button class="form-submit" type="submit">Submit</button></form>
+<p class="note">Our design team will contact you for your bespoke creation.</p></div></section>
+
+<section id="how"><div class="container"><div class="sec-head"><p class="text-label">How It Works</p><h2 class="heading-display">Made for your order, not off a shelf</h2></div>
+<div class="steps"><div><div class="n">01</div><h3>SELECT</h3><p>Choose your SEVENTIANO design.</p></div><div><div class="n">02</div><h3>CONFIRM</h3><p>Select size, metal and stone.</p></div><div><div class="n">03</div><h3>CRAFT</h3><p>Your piece is manufactured specifically for your order.</p></div><div><div class="n">04</div><h3>DELIVER</h3><p>Quality checked and delivered to you.</p></div></div>
+<div class="flow" style="margin-top:44px"><span>ORDER NOW</span><span>Design ID</span><span>Size</span><span>Metal</span><span>Stone</span><span>Customer info</span><span>Final quotation</span><span>Advance payment</span><span>Manufacturing</span><span>Quality check</span><span>Dispatch</span></div></div></section>
+
+<section id="about"><div class="container" style="max-width:760px;text-align:center"><p class="text-label">About Seventiano</p><h2 class="heading-display">Identity, worn.</h2>
+<p class="text-body">SEVENTIANO is a contemporary luxury jewellery house built around individuality, limited creations and distinctive design.</p><p class="text-body">We believe jewellery should not simply be worn—it should carry an identity.</p><p class="text-body">Every SEVENTIANO creation is produced with attention to design, proportion and detail.</p></div></section>
+
+<section id="private"><div class="container" style="max-width:760px;text-align:center"><p class="text-label">Private Client</p><h2 class="heading-display">PRIVATE CLIENT</h2>
+<p class="text-body">For clients seeking something beyond our collections. Phone / video consultation available.</p>
+<div class="hero-actions" style="justify-content:center"><a href="#order" class="btn-primary">Private Appointment</a><a href="#bespoke" class="btn-primary">Bespoke Enquiry</a></div></div></section>
+
+<section id="tracking"><div class="container" style="max-width:900px"><div class="sec-head"><p class="text-label">Order Tracking</p><h2 class="heading-display">Order #SV0000</h2></div>
+<div class="track"><div class="done">ORDER CONFIRMED ✓</div><div class="done">DESIGN CONFIRMED ✓</div><div>IN PRODUCTION</div><div>QUALITY CHECK</div><div>READY TO SHIP</div><div>DELIVERED</div></div></div></section>
+
+<section id="account"><div class="container" style="max-width:900px"><div class="sec-head"><p class="text-label">Customer Account</p><h2 class="heading-display">Your account</h2></div>
+<div class="acct"><a href="#tracking">My Orders</a><a href="#tracking">Order Status</a><a href="#collections">Saved Designs</a><a href="#account">Invoices</a><a href="#account">Addresses</a><a href="#bespoke">Bespoke Requests</a></div></div></section>
+
+<section id="info"><div class="container" style="max-width:820px"><div class="sec-head"><p class="text-label">Information</p><h2 class="heading-display">Contact &amp; Policies</h2></div><div id="contact" style="margin-bottom:34px;scroll-margin-top:90px"><h3 class="cat-title" style="margin-top:0">Contact</h3><p class="text-body">Phone / WhatsApp: +91 XXXXX XXXXX. Email: hello@yourdomain.com. Add your address or appointment details here.</p></div><div id="shipping" style="margin-bottom:34px;scroll-margin-top:90px"><h3 class="cat-title" style="margin-top:0">Shipping</h3><p class="text-body">Every piece is made to order and takes 10–20 working days to craft. After quality check it is dispatched, insured, to your address. Shipping charges and delivery time are confirmed with your final quotation.</p></div><div id="returns" style="margin-bottom:34px;scroll-margin-top:90px"><h3 class="cat-title" style="margin-top:0">Returns</h3><p class="text-body">Because each piece is made specifically for your order, please confirm size, metal and stone before production begins. Add your return, exchange and resizing policy here.</p></div><div id="order-terms" style="margin-bottom:34px;scroll-margin-top:90px"><h3 class="cat-title" style="margin-top:0">Order Terms</h3><p class="text-body">50% advance to begin production and 50% before dispatch. Final price may vary according to metal weight, stone selection and size, and is confirmed in your quotation. Bespoke orders may have separate terms.</p></div><div id="privacy" style="margin-bottom:34px;scroll-margin-top:90px"><h3 class="cat-title" style="margin-top:0">Privacy Policy</h3><p class="text-body">We collect only the details you share (name, phone, email, address, design preferences) to process your order or enquiry. We do not sell your information. Add your full policy here.</p></div><div id="terms" style="margin-bottom:34px;scroll-margin-top:90px"><h3 class="cat-title" style="margin-top:0">Terms &amp; Conditions</h3><p class="text-body">By placing an order request you agree to our Order Terms. Designs, renders and the SEVENTIANO name are the property of SEVENTIANO. Add your full terms here.</p></div></div></section>
+<footer class="site-footer"><div class="container" style="text-align:center;padding:50px 24px 24px">
+<p class="footer-logo">SEVENTIANO</p><p class="footer-tagline">Jewellery Beyond Ordinary.</p>
+<div class="fcols"style="justify-content:center"><a href="#contact">Contact</a><a href="#shipping">Shipping</a><a href="#returns">Returns</a><a href="#order-terms">Order Terms</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp; Conditions</a></div>
+<div class="footer-social" style="justify-content:center"><a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+<p class="footer-copyright" style="margin-top:18px">© 2026 SEVENTIANO</p></div></footer>
+<script>
+(function(){
+document.querySelectorAll('img').forEach(function(i){var h=function(){i.style.display='none'};i.addEventListener('error',h);if(i.complete&&i.naturalWidth===0)h();});
+var t=document.getElementById('menuToggle'),n=document.getElementById('mobileNav'),o=document.getElementById('mobileOverlay'),c=document.getElementById('mobileNavClose');
+function tog(v){n.classList.toggle('active',v);o.classList.toggle('active',v)}
+t.onclick=function(){tog(true)};c.onclick=function(){tog(false)};o.onclick=function(){tog(false)};
+n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){tog(false)})});
+document.querySelectorAll('.chips').forEach(function(g){g.querySelectorAll('.chip').forEach(function(ch){ch.onclick=function(){if(document.body.classList.contains('editing'))return;g.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});ch.classList.add('on')}})});
+var g=document.getElementById('gal'),gc=document.getElementById('gCount');function gs(d){g.scrollBy({left:d*g.clientWidth,behavior:'smooth'})}document.getElementById('gPrev').onclick=function(){gs(-1)};document.getElementById('gNext').onclick=function(){gs(1)};g.addEventListener('scroll',function(){gc.textContent=(Math.round(g.scrollLeft/g.clientWidth)+1)+' / 5'});
+document.addEventListener('mousedown',function(e){if(!document.body.classList.contains('editing'))return;var t=e.target.closest('input.fld,select.fld');if(!t||t.type==='file')return;e.preventDefault();var v;if(t.tagName==='SELECT'){v=prompt('Edit options (comma separated, first one is the heading):',[].map.call(t.options,function(o){return o.text}).join(', '));if(v!==null){t.innerHTML='';v.split(',').forEach(function(x){x=x.trim();if(x){var o=document.createElement('option');o.textContent=x;t.appendChild(o)}})}}else{v=prompt('Edit field text:',t.placeholder);if(v!==null)t.placeholder=v}},true);
+var sl=document.querySelectorAll('.hero-slide'),ht=document.getElementById('heroTitle'),hp=document.getElementById('heroPrice');
+setInterval(function(){if(document.body.classList.contains('editing'))return;var cur=0;sl.forEach(function(s,i){if(s.classList.contains('active'))cur=i});sl[cur].classList.remove('active');var k=(cur+1)%sl.length;sl[k].classList.add('active');ht.textContent=sl[k].dataset.title;hp.textContent=sl[k].dataset.price},4000);
+document.querySelectorAll('.sv-form').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();if(document.body.classList.contains('editing'))return;alert('Thank you! Our team will contact you shortly.');f.reset()})});
+})();
+</script>
+    <script>
+(function(){
+    var KEY='seventiano_site_v2';
+    var STATE={text:{},img:{},slides:[],pw:null,links:{}};
+    try{var raw=localStorage.getItem(KEY);if(raw)STATE=Object.assign(STATE,JSON.parse(raw));}catch(e){}
+    try{if(!STATE.pw){var o=JSON.parse(localStorage.getItem('seventiano_site_v1')||'{}');if(o.pw)STATE.pw=o.pw;}}catch(e){}
+    var meta=document.querySelector('meta[name="sv-h"]');
+    if(STATE.pw)meta.setAttribute('content',STATE.pw);
+    function hash(s){var h1=0xdeadbeef,h2=0x41c6ce57;for(var i=0,c;i<s.length;i++){c=s.charCodeAt(i);h1=Math.imul(h1^c,2654435761);h2=Math.imul(h2^c,1597334677);}
+        h1=Math.imul(h1^(h1>>>16),2246822507);h1^=Math.imul(h2^(h2>>>13),3266489909);
+        h2=Math.imul(h2^(h2>>>16),2246822507);h2^=Math.imul(h1^(h1>>>13),3266489909);
+        return String(4294967296*(2097151&h2)+(h1>>>0));}
+    var editing=false,timer=null;
+    document.querySelectorAll('a').forEach(function(a,i){a.dataset.lid=i;});
+
+    /* ---- index images and editable text ---- */
+    document.querySelectorAll('img').forEach(function(im,i){im.dataset.iid=i;});
+    var TEXT_SEL='h1,h2,h3,h4,p,li,a,label,span,b,strong,em,button.form-submit,.lab,.n,.track div,.detail-label,.detail-value,.featured-badge';
+    var cand=[].slice.call(document.querySelectorAll(TEXT_SEL)).filter(function(e){
+        return !e.closest('.mobile-nav,.hero-image-overlay,#svBar,.footer-social,.gnav,.menu-toggle');});
+    var editables=cand.filter(function(e){return !cand.some(function(o){return o!==e&&o.contains(e);});});
+    editables.forEach(function(e,i){e.dataset.eid=i;});
+    var slides=[].slice.call(document.querySelectorAll('.hero-slide'));
+    var ovT=document.getElementById('heroTitle'),ovP=document.getElementById('heroPrice');
+
+    function syncMobile(){
+        var main=document.querySelectorAll('.nav-main a:not(.nav-cta)');
+        document.querySelectorAll('.mobile-nav-links a').forEach(function(a,i){if(main[i])a.textContent=main[i].textContent;});
+        var cta=document.querySelector('.nav-cta'),mc=document.querySelector('.mobile-nav-cta a');
+        if(cta&&mc)mc.textContent=cta.textContent;
+    }
+    function persist(){
+        clearTimeout(timer);
+        timer=setTimeout(function(){
+            try{localStorage.setItem(KEY,JSON.stringify(STATE));}
+            catch(e){alert('Browser memory is full. Click "Save HTML" now so your work is not lost.');}
+        },400);
+    }
+    function showSlide(n){
+        slides.forEach(function(s,i){s.classList.toggle('active',i===n);});
+        if(slides[n]){ovT.textContent=slides[n].dataset.title;ovP.textContent=slides[n].dataset.price;}
+    }
+    function activeIdx(){var a=0;slides.forEach(function(s,i){if(s.classList.contains('active'))a=i;});return a;}
+
+    /* ---- restore saved edits (only exist in the owner's own browser) ---- */
+    editables.forEach(function(e){var v=STATE.text[e.dataset.eid];if(v!==undefined)e.innerHTML=v;});
+    document.querySelectorAll('img').forEach(function(im){var v=STATE.img[im.dataset.iid];if(v){im.src=v;im.style.display='';}});
+    idbAll(function(items){items.forEach(function(kv){var im=document.querySelector('img[data-iid="'+kv[0]+'"]');if(im)applyVideo(im,URL.createObjectURL(kv[1]));});});
+    slides.forEach(function(s,i){var v=STATE.slides[i];if(v){s.dataset.title=v.t;s.dataset.price=v.p;}});
+    showSlide(activeIdx());
+    document.querySelectorAll('a').forEach(function(a){var v=STATE.links[a.dataset.lid];
+        if(v){a.setAttribute('href',v);if(/^https?:/i.test(v)){a.target='_blank';a.rel='noopener noreferrer';}}});
+    syncMobile();
+
+    function setLink(a){
+        var cur=a.getAttribute('href'),name=a.textContent.trim();
+        var v=prompt('Link for "'+name+'"\nExample: https://www.instagram.com/yourname',cur==='#'?'':cur);
+        if(v===null)return;v=v.trim();
+        if(!v)v='#';
+        else{
+            if(/^@?[A-Za-z0-9._]+$/.test(v)&&name.toLowerCase()==='instagram')v='https://www.instagram.com/'+v.replace('@','')+'/';
+            if(!/^(https?:|mailto:|tel:|#)/i.test(v))v='https://'+v;
+        }
+        a.setAttribute('href',v);
+        if(/^https?:/i.test(v)){a.target='_blank';a.rel='noopener noreferrer';}
+        STATE.links[a.dataset.lid]=v;persist();
+    }
+
+    /* ---- image upload ---- */
+    var SLOTS='.hero-image,.featured-image,.collection-item,.story-image,.craft-image,.testimonial-avatar,.pcard';
+    function slotImg(slot){return slot.classList.contains('hero-image')?slot.querySelector('.hero-slide.active img'):slot.querySelector('img');}
+    function compress(file,cb){
+        var r=new FileReader();
+        r.onload=function(){var im=new Image();im.onload=function(){
+            var m=1400,w=im.width,h=im.height,k=Math.min(1,m/Math.max(w,h));
+            var c=document.createElement('canvas');c.width=Math.round(w*k);c.height=Math.round(h*k);
+            c.getContext('2d').drawImage(im,0,0,c.width,c.height);cb(c.toDataURL('image/jpeg',0.82));};
+            im.src=r.result;};
+        r.readAsDataURL(file);
+    }
+    /* videos are kept in IndexedDB (too big for localStorage) */
+    function idb(cb){try{var r=indexedDB.open('seventiano_media2',1);
+        r.onupgradeneeded=function(){r.result.createObjectStore('v');};
+        r.onsuccess=function(){cb(r.result);};r.onerror=function(){cb(null);};}catch(e){cb(null);}}
+    function idbPut(k,v){idb(function(db){if(db)db.transaction('v','readwrite').objectStore('v').put(v,k);});}
+    function idbDel(k){idb(function(db){if(db)db.transaction('v','readwrite').objectStore('v').delete(k);});}
+    function idbAll(cb){idb(function(db){if(!db)return cb([]);var out=[];
+        var q=db.transaction('v').objectStore('v').openCursor();
+        q.onsuccess=function(){var c=q.result;if(c){out.push([c.key,c.value]);c.continue();}else cb(out);};
+        q.onerror=function(){cb(out);};});}
+    function removeVideo(img){var v=img.parentNode.querySelector('video.sv-vid');if(v)v.remove();}
+    function applyVideo(img,src){
+        removeVideo(img);
+        var v=document.createElement('video');v.className='sv-vid';v.src=src;
+        v.setAttribute('autoplay','');v.setAttribute('muted','');v.setAttribute('loop','');v.setAttribute('playsinline','');
+        v.muted=true;v.loop=true;v.autoplay=true;v.playsInline=true;
+        img.style.display='none';img.parentNode.insertBefore(v,img.nextSibling);
+        var pr=v.play();if(pr&&pr.catch)pr.catch(function(){});
+    }
+    function pick(slot){
+        var img=slotImg(slot);if(!img)return;
+        var inp=document.createElement('input');inp.type='file';inp.accept='image/*,video/*';
+        inp.onchange=function(){var f=inp.files[0];if(!f)return;
+            var id=img.dataset.iid;
+            if(/^video\//.test(f.type)){
+                var mb=f.size/1048576;
+                if(mb>25){alert('This video is '+mb.toFixed(1)+' MB. Please use a shorter/compressed video (under about 8 MB works best).');return;}
+                if(mb>8&&!confirm('This video is '+mb.toFixed(1)+' MB. A big video makes the page slow to open. Continue?'))return;
+                delete STATE.img[id];persist();
+                idbPut(id,f);applyVideo(img,URL.createObjectURL(f));
+            }else{
+                compress(f,function(url){removeVideo(img);idbDel(id);img.src=url;img.style.display='';STATE.img[id]=url;persist();});
+            }};
+        inp.click();
+    }
+    function editOverlay(){
+        var i=activeIdx(),s=slides[i];
+        var t=prompt('Photo title (shown on hero photo):',s.dataset.title);if(t===null)return;
+        var p=prompt('Price / subtitle:',s.dataset.price);if(p===null)return;
+        s.dataset.title=t;s.dataset.price=p;STATE.slides[i]={t:t,p:p};showSlide(i);persist();
+    }
+
+    /* ---- save a clean copy of the page ---- */
+    function bake(cb){
+        syncMobile();
+        var keepActive=activeIdx();showSlide(0);
+        var c=document.documentElement.cloneNode(true);
+        showSlide(keepActive);
+        var bar=c.querySelector('#svBar');if(bar)bar.remove();
+        c.querySelector('body').classList.remove('editing');
+        if(!c.querySelector('body').className)c.querySelector('body').removeAttribute('class');
+        c.querySelectorAll('[contenteditable]').forEach(function(e){e.removeAttribute('contenteditable');e.removeAttribute('spellcheck');});
+        c.querySelectorAll('.img-slot').forEach(function(e){e.classList.remove('img-slot');if(!e.className)e.removeAttribute('class');});
+        c.querySelectorAll('img').forEach(function(im){
+            var n=im.nextElementSibling;if(n&&n.classList.contains('sv-vid'))return;
+            if(!/^data:/.test(im.getAttribute('src')||''))im.removeAttribute('style');});
+        var vids=[].slice.call(c.querySelectorAll('video.sv-vid')),left=vids.length;
+        function done(){cb('<!DOCTYPE html>\n'+c.outerHTML);}
+        if(!left){done();return;}
+        vids.forEach(function(v){
+            fetch(v.getAttribute('src')).then(function(r){return r.blob();}).then(function(b){
+                var fr=new FileReader();
+                fr.onload=function(){v.setAttribute('src',fr.result);if(--left===0)done();};
+                fr.readAsDataURL(b);
+            }).catch(function(){if(--left===0)done();});
+        });
+    }
+    function download(){
+        var btn=document.getElementById('svSave'),t=btn.textContent;btn.textContent='⏳ Preparing...';
+        bake(function(html){
+            var blob=new Blob([html],{type:'text/html'});
+            var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='index.html';
+            document.body.appendChild(a);a.click();a.remove();btn.textContent=t;
+            if(blob.size>30*1048576)alert('Your file is '+(blob.size/1048576).toFixed(0)+' MB because of the videos. Try shorter or compressed videos so the website opens fast.');
+        });
+    }
+
+    /* ---- edit mode on / off ---- */
+    function onInput(e){var el=e.target.closest('[data-eid]');if(el){STATE.text[el.dataset.eid]=el.innerHTML;persist();}}
+    function onPaste(e){if(!e.target.closest('[contenteditable=true]'))return;
+        e.preventDefault();document.execCommand('insertText',false,(e.clipboardData||window.clipboardData).getData('text/plain'));}
+    function onClick(e){
+        if(!editing)return;
+        if(e.target.closest('#svBar'))return;
+        var lk=e.target.closest('a');
+        if(lk&&(lk.closest('.footer-social')||e.altKey)){e.preventDefault();e.stopPropagation();setLink(lk);return;}
+        if(e.target.closest('a,label'))e.preventDefault();
+        if(e.target.closest('.hero-image-overlay')){e.preventDefault();e.stopPropagation();editOverlay();return;}
+        if(e.target.closest('[contenteditable=true]'))return;
+        var slot=e.target.closest(SLOTS);
+        if(slot){e.preventDefault();e.stopPropagation();pick(slot);}
+    }
+    function enter(){
+        if(editing)return;editing=true;
+        document.body.classList.add('editing');
+        editables.forEach(function(e){e.setAttribute('contenteditable','true');e.setAttribute('spellcheck','false');});
+        document.querySelectorAll(SLOTS).forEach(function(s){s.classList.add('img-slot');});
+        var bar=document.createElement('div');bar.id='svBar';
+        bar.innerHTML='<span>✏️ EDIT MODE: click text to type, click a photo or video to upload, click footer Instagram/Facebook to set its link (Alt+click for any other link)</span>'+
+            '<button id="svPrev">◀</button><span>Hero photo</span><button id="svNext">▶</button>'+
+            '<button id="svSave">💾 Save HTML</button><button id="svPw">🔑 Password</button>'+
+            '<button id="svReset">↺ Reset</button><button id="svExit">✖ Exit</button>';
+        document.body.appendChild(bar);
+        document.getElementById('svPrev').onclick=function(){showSlide((activeIdx()+slides.length-1)%slides.length);};
+        document.getElementById('svNext').onclick=function(){showSlide((activeIdx()+1)%slides.length);};
+        document.getElementById('svSave').onclick=download;
+        document.getElementById('svPw').onclick=function(){
+            var p=prompt('New owner password:');if(!p)return;
+            var hh=hash(p);meta.setAttribute('content',hh);STATE.pw=hh;persist();alert('Password changed. Click "Save HTML" to keep it in your file.');};
+        document.getElementById('svReset').onclick=function(){
+            if(confirm('Remove ALL edits made in this browser and go back to the original page?')){
+                try{localStorage.removeItem(KEY);}catch(e){}try{indexedDB.deleteDatabase('seventiano_media2');}catch(e){}setTimeout(function(){location.reload();},400);}};
+        document.getElementById('svExit').onclick=exit;
+    }
+    function exit(){
+        editing=false;sessionStorage.removeItem('sv_admin');
+        document.body.classList.remove('editing');
+        editables.forEach(function(e){e.removeAttribute('contenteditable');e.removeAttribute('spellcheck');});
+        document.querySelectorAll('.img-slot').forEach(function(s){s.classList.remove('img-slot');});
+        var b=document.getElementById('svBar');if(b)b.remove();
+    }
+    function tryEnter(){
+        if(sessionStorage.getItem('sv_admin')==='1'){enter();return;}
+        var pw=prompt('Owner password:');if(pw===null)return;
+        if(hash(pw)===meta.getAttribute('content')){sessionStorage.setItem('sv_admin','1');enter();}
+        else alert('Wrong password');
+    }
+    document.addEventListener('input',onInput);
+    document.addEventListener('paste',onPaste);
+    document.addEventListener('click',onClick,true);
+    document.addEventListener('keydown',function(e){
+        if(e.ctrlKey&&e.shiftKey&&(e.key==='E'||e.key==='e')){e.preventDefault();editing?exit():tryEnter();}});
+    window.addEventListener('hashchange',function(){if(location.hash.toLowerCase()==='#admin')tryEnter();});
+    if(location.hash.toLowerCase()==='#admin'||sessionStorage.getItem('sv_admin')==='1')tryEnter();
+})();
+    </script>
+</body>
+</html>
